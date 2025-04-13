@@ -8,4 +8,4 @@ export const login = (req, res) => {
 
 export const logout = (req, res) => {
     res.send ("logout route")
-};
+}; 
