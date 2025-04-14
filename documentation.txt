@@ -108,3 +108,42 @@
 
 ### Generate Token Function
 - Generates a JWT token for a user, sets a cookie with security measures, and returns the token.
+
+
+========================================================================================
+                        ###         MESSAGE.ROUTES.JS           ###
+========================================================================================
+
+SRC:
+
+const router = express.Router();
+
+router.get("/user", protectRoute,getUsersForSidebar)
+router.get("/id", protectRoute,getMessages)
+
+
+
+-----------------------------------------------------------------------------------------
+Explanation: This file defines routes for the message API. It uses the express Router to create routes for retrieving messages
+
+The code snippet does the following:
+
+const router = express.Router(); creates a new router object in Express. This router helps organize routes for your application.
+
+router.get("/user", protectRoute, getUsersForSidebar) defines a GET endpoint at the path "/user". When a request is made to this path:
+
+=>  First, the protectRoute middleware runs. This usually checks if the user is authenticated before allowing access.
+If the user is allowed, the getUsersForSidebar controller function runs to handle the request and send back a response.
+export default router; exports this router so it can be used in other parts of the application, typically to be added to the main Express app.
+
+=>  The line router.get("/id", protectRoute, getMessages) means:
+
+It defines a GET route at the path "/id" on the Express router.
+When a request is made to "/id":
+The protectRoute middleware runs first, which typically checks if the user is authenticated and authorized to access this route.
+If the user passes the protection check, the getMessages controller function is called to handle the request and send back the appropriate response, usually fetching messages related to the given "id".
+Although this exact route is not present in your current message.routes.js file, this is a common pattern in Express apps to protect routes and handle requests with controller functions.
+
+In summary, this line sets up a protected endpoint "/id" that returns messages via the getMessages function after verifying the user's access.
+
+In simple terms, this code sets up a protected route "/user" that only logged-in users can access, and when accessed, it runs some logic to get users for the sidebar
