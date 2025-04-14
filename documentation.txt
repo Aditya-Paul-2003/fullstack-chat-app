@@ -1,0 +1,110 @@
+# Backend Documentation
+
+## 1. index.js (Main Application Entry Point)
+### Import Dependencies
+- Imports express, dotenv, authRoutes, and connectDB.
+
+### Environment Configuration
+- Loads environment variables.
+
+### Express Application Setup
+- Creates an Express application instance and sets the port.
+
+### Middleware
+- Adds JSON parsing middleware.
+
+### Route Configuration
+- Mounts authentication routes.
+
+### Server Initialization
+- Starts the server and connects to the database.
+
+---
+
+## 2. auth.routes.js (Authentication Routes)
+### Import Dependencies
+- Imports express, login, logout, signup, and protectRoute.
+
+### Router Initialization
+- Creates an Express router instance.
+
+### Route Definitions
+- Defines routes for signup, login, logout, and profile updates.
+
+### Export
+- Exports the configured router.
+
+---
+
+## 3. auth.controller.js (Authentication Controllers)
+### Import Dependencies
+- Imports generateToken, User, and bcrypt.
+
+### Signup Controller
+- Handles user registration, validates input, checks for existing users, hashes the password, and saves the new user.
+
+### Login Controller
+- Handles user login, validates credentials, and generates a JWT token.
+
+### Logout Controller
+- Handles user logout by clearing the JWT cookie.
+
+### Update Profile Controller
+- Placeholder for future implementation.
+
+---
+
+## 4. auth.middleware.js (Authentication Middleware)
+### Import Dependencies
+- Imports jwt and User.
+
+### Protect Route Middleware
+- Verifies JWT tokens, checks for user existence, and attaches user to request object.
+
+---
+
+## 5. user.models.js (User Model/Schema)
+### Import Dependencies
+- Imports mongoose.
+
+### User Schema Definition
+- Defines the structure of user documents with fields for email, fullName, password, and profilePic.
+
+### Model Creation
+- Creates a Mongoose model named "User".
+
+### Export
+- Exports the User model.
+
+---
+
+## 6. cloudinary.js (Cloudinary Configuration)
+### Import Dependencies
+- Imports cloudinary and dotenv.
+
+### Environment Configuration
+- Loads environment variables.
+
+### Cloudinary Configuration
+- Configures Cloudinary with cloud name, API key, and API secret.
+
+### Export
+- Exports the configured Cloudinary instance.
+
+---
+
+## 7. db.js (Database Connection)
+### Import Dependencies
+- Imports mongoose.
+
+### Database Connection Function
+- Establishes connection to MongoDB and logs connection status.
+
+---
+
+## 8. utils.js (Utility Functions)
+### Import Dependencies
+- Imports jwt.
+
+### Generate Token Function
+- Generates a JWT token for a user, sets a cookie with security measures, and returns the token.
