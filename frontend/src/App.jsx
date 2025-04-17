@@ -10,9 +10,14 @@ import SignUpPage from './pages/SignUpPage.jsx'
 
 import {Loader} from 'lucide-react'
 
+<<<<<<< HEAD
 import {Navigate, Route, Routes } from 'react-router-dom'
 import { useAuthStore } from './store/useAuthStore.js';
 
+=======
+import { Route, Routes } from 'react-router-dom'
+import { useAuthStore} from './store/useAuthStore.js'
+>>>>>>> 8303161cdddfb1508b3fccb33dbb69548aab490e
 
 const App = () => {
     
