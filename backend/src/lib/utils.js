@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 export const generateToken=(userId, res) =>{
     //this will help us to generate a token with the user id
 
-    const token = jwt.sign({userId}, process.env.JWT_SECRECT, {
+    const token = jwt.sign({userId}, process.env.JWT_SECRET, {
         
         expiresIn:"7d",
 
