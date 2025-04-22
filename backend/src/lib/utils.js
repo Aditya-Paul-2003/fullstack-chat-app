@@ -16,7 +16,8 @@ export const generateToken=(userId, res) =>{
 
         httpOnly: true, // this will prevent XSS attack cross-site scripting attacks i.e. prevents the token from being accessed by the client side code
         
-        samSite: "strict", //sameSite helps in preventing CSRF attacks cross-site request forgery attacks i.e. prevents the token from being accessed by
+        sameSite: "None", //
+        //sameSite helps in preventing CSRF attacks cross-site request forgery attacks i.e. prevents the token from being accessed by
 
         secure: process.env.NODE_ENV !== "development" // this will prevent the token from being accessed by the client side code if the environment is not development
     });   
