@@ -43,7 +43,7 @@ export const signup = async(req, res) => {
             });//significance of 201
 
         }else {
-            res.status(400).jdon({ message: "Invalid user data"}); 
+            res.status(400).json({ message: "Invalid user data"}); 
         }
 
     }catch(error){

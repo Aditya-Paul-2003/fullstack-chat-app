@@ -9,7 +9,7 @@ const messageSchema = new mongoose.Schema(
         },
         // used to identify the sender of the message by their id
         
-        recieverId:{
+        receiverId:{
             type:mongoose.Schema.Types.ObjectId,
             ref: "User",
             required: "true"
